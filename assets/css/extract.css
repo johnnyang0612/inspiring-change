@@ -1,0 +1,72 @@
+@import url(https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css);
+
+/* 2024/06/13 開始新增之css */
+.project-tag{
+	background: #D6000F;
+	position: relative;
+	width: fit-content;
+	-moz-width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 34px;
+	padding: 2px 9px;
+}
+
+.project-tag::before,.project-tag::after{
+	content: '';
+	display: block;
+	position: absolute;
+	border-style: solid;
+
+}
+
+.project-tag::before{
+	bottom: 0;
+	left: -15px;
+	border-width: 0 0 34px 15px;
+	border-color: transparent transparent #D6000F transparent;
+}
+
+.project-tag::after{
+	top: 0;
+	right: -15px;
+	border-width: 34px 15px 0 0;
+	border-color: #D6000F transparent transparent transparent;
+}
+
+@media (max-width:1199px){
+	.project-tag{
+		font-size: 14px;
+	}
+}
+
+@media (max-width:575px){
+	.project-tag{
+		margin-top: 15px;
+		margin-left: 15px;
+		font-size: 16px;
+	}
+}
+
+@media (min-width:576px){
+	.project-title{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.project-tag{
+		margin-top: 4px;
+		margin-left: 49px;
+	}
+}
+
+@media (min-width:1200px){
+	.project-tag{
+		font-size: 18px;
+		margin-top: 4px;
+		margin-left: 49px;
+	}
+}
