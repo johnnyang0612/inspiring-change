@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/about", "destination": "/about.html" },
-    { "source": "/works", "destination": "/work.html" },
+    { "source": "/work", "destination": "/work.html" },
     { "source": "/service", "destination": "/service.html" },
     { "source": "/contact", "destination": "/contact.html" }
   ]

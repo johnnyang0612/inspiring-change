@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 // 作品頁路由
-app.get('/works', (req, res) => {
+app.get('/work', (req, res) => {
     res.sendFile(path.join(__dirname, 'work.html'));
 });
 
