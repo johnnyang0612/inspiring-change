@@ -16654,7 +16654,7 @@ yx-axis
 }
 
 .header-light #header .logo a {
-    background-image: url(../images/logo.png?f3c3682fc68087304fa59ab10c850dfd);
+    background-image: /assets/images/logo.png;
 }
 
 .header-light #header a.tel {
@@ -16672,7 +16672,7 @@ yx-axis
 
 @media (min-width: 992px) {
     .header-light #header.active .logo a {
-        background-image: url(../images/logo2.png?e7f5afbe70c9974ae6894329de99cec1);
+        background-image: url(/assets/images/logo2.png);
     }
 }
 
@@ -16766,7 +16766,7 @@ yx-axis
     width: 250px;
     height: 100%;
     position: relative;
-    background: url(../images/logo2.png?e7f5afbe70c9974ae6894329de99cec1) left top no-repeat;
+    background: url(/assets/images/logo2.png) left top no-repeat;
     background-size: contain;
     overflow: hidden;
     -webkit-transition: background 0.5s ease;
@@ -16775,7 +16775,7 @@ yx-axis
 
 @media (max-width: 991.98px) {
     #header .logo a {
-        background-image: url(../images/logo.png?f3c3682fc68087304fa59ab10c850dfd);
+        background-image: /assets/images/logo.png;
     }
 }
 
@@ -18280,7 +18280,7 @@ body:after {
     display: block;
     width: 100%;
     position: relative;
-    background: rgba(0, 0, 0, 0.8) url(../images/logo.png?f3c3682fc68087304fa59ab10c850dfd) center no-repeat;
+    background: rgba(0, 0, 0, 0.8) /assets/images/logo.png center no-repeat;
     background-size: 200px;
     text-decoration: none;
 }
@@ -21070,7 +21070,7 @@ ul.tabs>li.active {
     display: block;
     width: 100%;
     position: relative;
-    background: rgba(0, 0, 0, 0.8) url(../images/logo.png?f3c3682fc68087304fa59ab10c850dfd) center no-repeat;
+    background: rgba(0, 0, 0, 0.8) /assets/images/logo.png center no-repeat;
     background-size: 200px;
 }
 
