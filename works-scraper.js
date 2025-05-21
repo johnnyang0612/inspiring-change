@@ -63,7 +63,7 @@ const processResourceUrl = (baseUrl, resourceUrl) => {
 
 async function scrapeWebsite() {
     try {
-        const baseUrl = '/works';
+        const baseUrl = '/work';
         console.log('开始抓取网站...');
         
         // 创建资源目录
