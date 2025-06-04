@@ -17,6 +17,10 @@ app.get('/work', (req, res) => {
     res.sendFile(path.join(__dirname, 'work.html'));
 });
 
+app.get('/work-info', (req, res) => {
+    res.sendFile(path.join(__dirname, 'work-info.html'));
+});
+
 // 聯絡頁路由
 app.get('/contact', (req, res) => {
     res.sendFile(path.join(__dirname, 'contact.html'));
@@ -32,7 +36,20 @@ app.get('/service', (req, res) => {
     res.sendFile(path.join(__dirname, 'service.html'));
 });
 
-    
+// 图片资源分析页面路由
+app.get('/index-resource', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index-resource.html'));
+});
+
+// 新增：about-resource.html 路由
+app.get('/about-resource.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'about-resource.html'));
+});
+
+// 新增：contact-resource.html 路由
+app.get('/contact.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'contact-resource.html'));
+});
 
 app.listen(port, () => {
     console.log(`服务器运行在 http://localhost:${port}`);

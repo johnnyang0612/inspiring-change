@@ -1,0 +1,86 @@
+[
+  {
+    "src": "https://minmax.tw/files/images/layout/view.jpg",
+    "width": 250,
+    "height": 200,
+    "format": "jpeg",
+    "size": 18970
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/user03.png",
+    "width": 721,
+    "height": 511,
+    "format": "png",
+    "size": 86766
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/user02.png",
+    "width": 763,
+    "height": 510,
+    "format": "png",
+    "size": 40965
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/plan-bg.jpg",
+    "width": 2000,
+    "height": 900,
+    "format": "jpeg",
+    "size": 100423
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/web-design03.png",
+    "width": 707,
+    "height": 815,
+    "format": "png",
+    "size": 133656
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/web-design02.png",
+    "width": 726,
+    "height": 867,
+    "format": "png",
+    "size": 137876
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/web-design04.png",
+    "width": 714,
+    "height": 831,
+    "format": "png",
+    "size": 112498
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/e-commerce-bg.jpg",
+    "width": 2000,
+    "height": 900,
+    "format": "jpeg",
+    "size": 175587
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/photography-bg.jpg",
+    "width": 2000,
+    "height": 900,
+    "format": "jpeg",
+    "size": 159201
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/user01.png",
+    "width": 903,
+    "height": 634,
+    "format": "png",
+    "size": 422607
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/web-design01.png",
+    "width": 715,
+    "height": 966,
+    "format": "png",
+    "size": 145240
+  },
+  {
+    "src": "https://minmax.tw/files/images/service/seo-bg.jpg",
+    "width": 2000,
+    "height": 900,
+    "format": "jpeg",
+    "size": 159746
+  }
+]

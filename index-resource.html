@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁設計規格</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .image-card {
+            background: rgb(203, 203, 203);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .metadata {
+            font-size: 14px;
+            color: #666;
+        }
+        .metadata p {
+            margin: 5px 0;
+        }
+        .file-path {
+            word-break: break-all;
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+        .stats {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ispiring首頁設計規格</h1>
+    </div>
+
+    <div class="stats">
+        <h2>圖文對照表</h2>
+        <div id="stats"></div>
+    </div>
+
+    <div class="image-grid" id="imageGrid"></div>
+
+    <script>
+        fetch('/image-analysis.json')
+            .then(response => response.json())
+            .then(data => {
+                const imageGrid = document.getElementById('imageGrid');
+                const stats = document.getElementById('stats');
+                
+                // 计算统计信息
+                const totalImages = data.length;
+                const totalSize = data.reduce((sum, img) => sum + img.size, 0);
+                const formats = data.reduce((acc, img) => {
+                    acc[img.format] = (acc[img.format] || 0) + 1;
+                    return acc;
+                }, {});
+
+                // 显示统计信息
+                // stats.innerHTML = `
+                //     <p>总图片数量: ${totalImages}</p>
+                //     <p>总文件大小: ${(totalSize / 1024 / 1024).toFixed(2)} MB</p>
+                //     <p>图片格式分布: ${Object.entries(formats).map(([format, count]) => 
+                //         `${format}: ${count}张`).join(', ')}</p>
+                // `;
+
+                // 显示图片卡片
+                data.forEach(img => {
+                    const card = document.createElement('div');
+                    card.className = 'image-card';
+                    card.innerHTML = `
+                        <img src="${img.src}" alt="图片预览">
+                        <div class="metadata">
+                            <p>尺寸: ${img.width} x ${img.height} 像素</p>
+                            <p>格式: ${img.format.toUpperCase()}</p>
+                            <div class="file-path">${img.src}</div>
+                        </div>
+                    `;
+                    imageGrid.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html> 

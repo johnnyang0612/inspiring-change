@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>About Images Resource | 圖片資源分析</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 32px; }
+    h1 { text-align: center; margin-bottom: 32px; }
+    .img-block { display: flex; align-items: center; background: #fafafa; border-radius: 6px; margin-bottom: 24px; box-shadow: 0 1px 4px #0001; padding: 16px; }
+    .img-block img { max-width: 180px; max-height: 180px; border-radius: 4px; background: #eee; margin-right: 32px; }
+    .meta { font-size: 15px; color: #333; }
+    .meta span { display: block; margin-bottom: 4px; }
+    @media (max-width: 600px) {
+      .img-block { flex-direction: column; align-items: flex-start; }
+      .img-block img { margin-right: 0; margin-bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>About頁面對應圖片規格</h1>
+    <div id="images"></div>
+  </div>
+  <script>
+    // 這裡直接嵌入 image-analysis.json 的內容
+    const images = 
+      [
+  {
+    "src": "https://minmax.tw/files/images/layout/view.jpg",
+    "width": 250,
+    "height": 200,
+    "format": "jpeg",
+    "size": 18970
+  },
+  {
+    "src": "https://minmax.tw/static/web/images/logo.png",
+    "width": 435,
+    "height": 105,
+    "format": "png",
+    "size": 32210
+  },
+  {
+    "src": "https://minmax.tw/files/images/about/we-do01.jpg",
+    "width": 800,
+    "height": 533,
+    "format": "jpeg",
+    "size": 102216
+  },
+  {
+    "src": "https://minmax.tw/files/images/about/ipad.png",
+    "width": 1148,
+    "height": 719,
+    "format": "png",
+    "size": 113404
+  },
+  {
+    "src": "https://minmax.tw/files/images/about/we-do02.jpg",
+    "width": 800,
+    "height": 600,
+    "format": "jpeg",
+    "size": 91323
+  },
+  {
+    "src": "https://minmax.tw/files/images/team/team23.png",
+    "width": 180,
+    "height": 180,
+    "format": "png",
+    "size": 49429
+  },
+  {
+    "src": "https://minmax.tw/files/images/about/team-bg.jpg",
+    "width": 2000,
+    "height": 1300,
+    "format": "jpeg",
+    "size": 168794
+  },
+  {
+    "src": "https://minmax.tw/files/images/about/service-bg.jpg",
+    "width": 2000,
+    "height": 1333,
+    "format": "jpeg",
+    "size": 163964
+  }
+];
+    const imagesDiv = document.getElementById('images');
+    images.forEach(img => {
+      const block = document.createElement('div');
+      block.className = 'img-block';
+      block.innerHTML = `
+        <img src="${img.src}" alt="${img.src}">
+        <div class="meta">
+          <span><b>src:</b> <a href="${img.src}" target="_blank">${img.src}</a></span>
+          <span><b>width:</b> ${img.width}px</span>
+          <span><b>height:</b> ${img.height}px</span>
+          <span><b>format:</b> ${img.format}</span>
+          <span><b>size:</b> ${(img.size/1024).toFixed(1)} KB</span>
+        </div>
+      `;
+      imagesDiv.appendChild(block);
+    });
+  </script>
+</body>
+</html> 

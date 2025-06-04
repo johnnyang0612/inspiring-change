@@ -1,0 +1,24 @@
+[
+  {
+    "src": "https://minmax.tw/files/images/layout/view.jpg",
+    "alt": "精選作品",
+    "dimensions": {
+      "width": 250,
+      "height": 200,
+      "size": 18970,
+      "url": "https://minmax.tw/files/images/layout/view.jpg",
+      "format": "jpeg"
+    }
+  },
+  {
+    "src": "https://minmax.tw/files/images/contact/banner-bg.jpg",
+    "alt": "Contact Us 聯絡雲端",
+    "dimensions": {
+      "width": 2000,
+      "height": 600,
+      "size": 273781,
+      "url": "https://minmax.tw/files/images/contact/banner-bg.jpg",
+      "format": "jpeg"
+    }
+  }
+]
