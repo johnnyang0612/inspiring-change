@@ -36,6 +36,10 @@ app.get('/service', (req, res) => {
     res.sendFile(path.join(__dirname, 'service.html'));
 });
 
+app.get('/service-info', (req, res) => {
+    res.sendFile(path.join(__dirname, 'service-info.html'));
+});
+
 // 图片资源分析页面路由
 app.get('/index-resource', (req, res) => {
     res.sendFile(path.join(__dirname, 'index-resource.html'));
