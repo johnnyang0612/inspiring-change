@@ -2,7 +2,7 @@
 
 /* 2024/06/13 開始新增之css */
 .project-tag{
-	background: #D6000F;
+	background: #7b3de5;
 	position: relative;
 	width: fit-content;
 	-moz-width: fit-content;
@@ -26,14 +26,14 @@
 	bottom: 0;
 	left: -15px;
 	border-width: 0 0 34px 15px;
-	border-color: transparent transparent #D6000F transparent;
+	border-color: transparent transparent #7b3de5 transparent;
 }
 
 .project-tag::after{
 	top: 0;
 	right: -15px;
 	border-width: 34px 15px 0 0;
-	border-color: #D6000F transparent transparent transparent;
+	border-color: #7b3de5 transparent transparent transparent;
 }
 
 @media (max-width:1199px){
