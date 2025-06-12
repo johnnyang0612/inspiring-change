@@ -587,7 +587,7 @@
             <div class="validate-error"></div>
           </div>
           <div class="col-auto mt-4 mt-bg-0 d-flex">
-                        <div id="cf-turnstile" class="mx-auto"></div>
+                        <!-- <div id="cf-turnstile" class="mx-auto"></div> -->
                       </div>
           <div class="col-auto mt-4 mt-bg-2">
             <div class="form-group d-block border-0 flex-column flex-bg-row align-items-center">
@@ -671,7 +671,7 @@
 
 <script type="text/plain" data-category="analytics">fetch('https://minmax.tw/api/record/trackers/exposed?records=eyJBcnRpY2xlQmxvY2siOlsiYmxvY2stY29udGFjdC1oZWFkZXItMSJdLCJBcnRpY2xlUGFnZSI6WyJ3ZWItY29udGFjdCJdfQ%3D%3D', {cache: 'no-cache'});</script>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+<!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script> -->
 <script type="importmap">
 {
   "imports": {
@@ -685,7 +685,7 @@ import { createApp } from 'vue';
 createApp({
   data() {
     return {
-      submit_enable: false,
+      submit_enable: true,
       submit_success: false,
       category_id: null,
       budget_selected: null,
@@ -706,13 +706,13 @@ createApp({
         return false;
       }
 
-      const api = "https://minmax.tw/api/inbox/receive/service-contact";
-      if (api.length < 0) {
-        return false;
-      }
-
+      const api = "/api/contact";
       const formData = new FormData(event.target);
-      const email = formData.get('email').toString();
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+      const email = data.email;
 
       this.submit_enable = false;
 
@@ -721,43 +721,48 @@ createApp({
         gtag('event', 'form_submit', { 'send_to': 'AW-986947927' });
       }
 
-      jQuery.get("https://minmax.tw/api/inbox/csrf-token").then((tokenResponse) => {
-        if (tokenResponse.code === '0000') {
-          formData.set('_token', tokenResponse.data);
-
-          jQuery.ajax({ url: api, data: formData, processData: false, contentType: false, type: 'POST',
-            success: (response) => {
-              if (response.code === '0000') {
-                if (typeof window['gtag'] === 'function') {
-                  gtag('event', 'conversion', {"send_to": "AW-986947927/olsxCNq4zesYENfCztYD"});
-                }
-                this.submit_success = true;
-              }
-            },
-            complete: () => {
-              this.submit_enable = true;
-            }
-          });
+      fetch(api, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(response => {
+        if (response.code === '0000') {
+          if (typeof window['gtag'] === 'function') {
+            gtag('event', 'conversion', {"send_to": "AW-986947927/olsxCNq4zesYENfCztYD"});
+          }
+          this.submit_success = true;
+        } else {
+          alert('寄信失敗，請稍後再試');
         }
+      })
+      .catch(() => {
+        alert('寄信失敗，請稍後再試');
+      })
+      .finally(() => {
+        this.submit_enable = true;
       });
 
       return false;
     }
   },
   mounted() {
-        if (document.getElementById('cf-turnstile')) {
-      turnstile.render("#cf-turnstile", {
-        sitekey: "0x4AAAAAAAiFRA6TkwAy5zjc",
-        action: "inbox_service-contact",
-        callback: (token) => {
-          if (token) this.submit_enable = true;
-        },
-      });
-    }
+    //     if (document.getElementById('cf-turnstile')) {
+    //   turnstile.render("#cf-turnstile", {
+    //     sitekey: "0x4AAAAAAAiFRA6TkwAy5zjc",
+    //     action: "inbox_service-contact",
+    //     callback: (token) => {
+    //       if (token) this.submit_enable = true;
+    //     },
+    //   });
+    // }
       }
 }).mount('#contactForm');
 </script>
-<script type="module" src="https://minmax.tw/static/js/plugins/cookie-consent-configs.js?lang=zh-TW" nonce="Ta8Q3OCLP7w4GgxOTnqxrSTQjdFRFdPA"></script>
+<!-- <script type="module" src="https://minmax.tw/static/js/plugins/cookie-consent-configs.js?lang=zh-TW" nonce="Ta8Q3OCLP7w4GgxOTnqxrSTQjdFRFdPA"></script> -->
 
 <script type="text/plain" data-category="analytics">
 window.addEventListener('load', () => {
