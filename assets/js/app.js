@@ -17969,23 +17969,23 @@ $(document).ready(function() {
             }]
         });
     });
-    $(".our-team").each(function() {
-        var item = $(this).find('ul.photos li');
-        $(window).scroll(function() {
-            var winTop = $(window).scrollTop() + $(window).height() - $(window).height() / 4;
-            var pageTop = item.offset().top;
-            if (winTop >= pageTop) {
-                item.each(function(i) {
-                    var $this = $(this);
-                    setTimeout(function() {
-                        $this.addClass("show");
-                    }, (i + 1) * 100 + 300);
-                });
-            } else {
-                item.removeClass("show");
-            }
-        });
-    });
+    // $(".our-team").each(function() {
+    //     var item = $(this).find('ul.photos li');
+    //     $(window).scroll(function() {
+    //         var winTop = $(window).scrollTop() + $(window).height() - $(window).height() / 4;
+    //         var pageTop = item.offset().top;
+    //         if (winTop >= pageTop) {
+    //             item.each(function(i) {
+    //                 var $this = $(this);
+    //                 setTimeout(function() {
+    //                     $this.addClass("show");
+    //                 }, (i + 1) * 100 + 300);
+    //             });
+    //         } else {
+    //             item.removeClass("show");
+    //         }
+    //     });
+    // });
     $(".project-mac").each(function() {
         $(this).find('.slider').slick({
             dots: false,
